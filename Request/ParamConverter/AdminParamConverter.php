@@ -2,7 +2,7 @@
 
 namespace Snowcap\AdminBundle\Request\ParamConverter;
 
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\ConfigurationInterface;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use Sensio\Bundle\FrameworkExtraBundle\Request\ParamConverter\ParamConverterInterface;
 use Snowcap\CoreBundle\Navigation\NavigationRegistry;
 use Symfony\Component\HttpFoundation\Request;
@@ -37,7 +37,7 @@ class AdminParamConverter implements ParamConverterInterface {
      * @throws \Symfony\Component\HttpKernel\Exception\NotFoundHttpException
      * @return bool|void
      */
-    public function apply(Request $request, ConfigurationInterface $configuration)
+    public function apply(Request $request, ParamConverter $configuration)
     {
         $param = $configuration->getName();
         $alias = $request->attributes->get('alias');
@@ -59,7 +59,7 @@ class AdminParamConverter implements ParamConverterInterface {
      * @param ConfigurationInterface $configuration
      * @return bool
      */
-    public function supports(ConfigurationInterface $configuration)
+    public function supports(ParamConverter $configuration)
     {
         return in_array('Snowcap\AdminBundle\Admin\AdminInterface', class_implements($configuration->getClass()));
     }

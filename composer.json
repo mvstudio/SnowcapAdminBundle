@@ -30,7 +30,8 @@
         "snowcap/core-bundle": "~1.0",
         "snowcap/bootstrap-bundle": "~1.0",
         "snowcap/im-bundle": "~1.0",
-        "leafo/lessphp": "v0.4.0"
+        "leafo/lessphp": "v0.4.0",
+        "sensio/framework-extra-bundle": "~3.0"
 
     },
     "autoload": {
